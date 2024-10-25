@@ -14,19 +14,19 @@ class ShopPage extends StatelessWidget {
         productRepository: ServiceLocator.get(),
         cartRepository: ServiceLocator.get(),
       ),
-      child: const ShopView(),
+      child: const _ShopView(),
     );
   }
 }
 
-class ShopView extends StatefulWidget {
-  const ShopView({super.key});
+class _ShopView extends StatefulWidget {
+  const _ShopView();
 
   @override
-  State<ShopView> createState() => _ShopViewState();
+  State<_ShopView> createState() => _ShopViewState();
 }
 
-class _ShopViewState extends State<ShopView> {
+class _ShopViewState extends State<_ShopView> {
   @override
   void initState() {
     super.initState();
@@ -40,9 +40,9 @@ class _ShopViewState extends State<ShopView> {
         buildWhen: (_, current) => current is ShopCollectionState,
         builder: (_, state) {
           return switch (state) {
-            ShopItemsLoadingState _ => const ShopLoadingView(),
-            ShopItemsLoadedState _ => ShopLoadedView(items: state.items),
-            _ => const ShopLoadingView(),
+            ShopItemsLoadingState _ => const _ShopLoadingView(),
+            ShopItemsLoadedState _ => _ShopLoadedView(items: state.items),
+            _ => const _ShopLoadingView(),
           };
         },
       ),
@@ -50,8 +50,8 @@ class _ShopViewState extends State<ShopView> {
   }
 }
 
-class ShopLoadingView extends StatelessWidget {
-  const ShopLoadingView({super.key});
+class _ShopLoadingView extends StatelessWidget {
+  const _ShopLoadingView();
 
   @override
   Widget build(BuildContext context) {
@@ -61,8 +61,8 @@ class ShopLoadingView extends StatelessWidget {
   }
 }
 
-class ShopLoadedView extends StatelessWidget {
-  const ShopLoadedView({super.key, required this.items});
+class _ShopLoadedView extends StatelessWidget {
+  const _ShopLoadedView({required this.items});
 
   final List<ShopItem> items;
 
@@ -72,14 +72,14 @@ class ShopLoadedView extends StatelessWidget {
       separatorBuilder: (_, __) => const SizedBox(height: 8),
       itemCount: items.length,
       itemBuilder: (_, index) {
-        return ShopItemCardBuilder(item: items[index]);
+        return _ShopItemCard(item: items[index]);
       },
     );
   }
 }
 
-class ShopItemCardBuilder extends StatelessWidget {
-  const ShopItemCardBuilder({super.key, required this.item});
+class _ShopItemCard extends StatelessWidget {
+  const _ShopItemCard({required this.item});
 
   final ShopItem item;
 
@@ -91,19 +91,19 @@ class ShopItemCardBuilder extends StatelessWidget {
           current.item.product.id == item.product.id,
       builder: (_, state) {
         return switch (state) {
-          ShopItemState _ => ShopItemCard(
+          ShopItemState _ => _Card(
               item: state.item,
               loading: state is ShopItemCartLoadingState,
             ),
-          _ => ShopItemCard(item: item, loading: false),
+          _ => _Card(item: item, loading: false),
         };
       },
     );
   }
 }
 
-class ShopItemCard extends StatelessWidget {
-  const ShopItemCard({super.key, required this.item, required this.loading});
+class _Card extends StatelessWidget {
+  const _Card({required this.item, required this.loading});
 
   final ShopItem item;
   final bool loading;
