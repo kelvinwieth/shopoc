@@ -1,4 +1,4 @@
-import 'package:help/domain/cart/cart.dart';
+import 'package:shopoc/domain/cart/cart.dart';
 
 abstract interface class CartRepository {
   Future<Cart> get();

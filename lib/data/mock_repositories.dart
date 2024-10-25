@@ -1,7 +1,7 @@
-import 'package:help/domain/cart/cart.dart';
-import 'package:help/domain/cart/cart_repository.dart';
-import 'package:help/domain/product/product.dart';
-import 'package:help/domain/product/product_repository.dart';
+import 'package:shopoc/domain/cart/cart.dart';
+import 'package:shopoc/domain/cart/cart_repository.dart';
+import 'package:shopoc/domain/product/product.dart';
+import 'package:shopoc/domain/product/product_repository.dart';
 
 const _delay = Duration(seconds: 2);
 

@@ -1,4 +1,4 @@
-import 'package:help/domain/product/product.dart';
+import 'package:shopoc/domain/product/product.dart';
 
 class ShopItem {
   const ShopItem({required this.product, required this.isOnCart});

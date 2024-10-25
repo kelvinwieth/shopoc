@@ -1,7 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:help/application/shop/models/shop_item.dart';
-import 'package:help/domain/cart/cart_repository.dart';
-import 'package:help/domain/product/product_repository.dart';
+import 'package:shopoc/application/shop/models/shop_item.dart';
+import 'package:shopoc/domain/cart/cart_repository.dart';
+import 'package:shopoc/domain/product/product_repository.dart';
 
 part 'shop_events.dart';
 part 'shop_states.dart';

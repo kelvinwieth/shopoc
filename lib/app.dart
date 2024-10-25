@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:help/application/shop/view/shop_page.dart';
+import 'package:shopoc/application/shop/view/shop_page.dart';
 
 class ShopApp extends StatelessWidget {
   const ShopApp({super.key});

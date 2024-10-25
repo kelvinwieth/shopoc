@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:help/application/shop/bloc/shop_bloc.dart';
-import 'package:help/application/shop/models/shop_item.dart';
-import 'package:help/service_locator.dart';
+import 'package:shopoc/application/shop/bloc/shop_bloc.dart';
+import 'package:shopoc/application/shop/models/shop_item.dart';
+import 'package:shopoc/service_locator.dart';
 
 class ShopPage extends StatelessWidget {
   const ShopPage({super.key});
